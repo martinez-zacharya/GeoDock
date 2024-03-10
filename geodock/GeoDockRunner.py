@@ -14,7 +14,8 @@ class GeoDockRunner():
     def __init__(self, ckpt_file):
 
         # Check if gpu is available
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        # self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device('cpu')
 
         # Load ESM-2 model
         self.esm_model, alphabet = esm.pretrained.esm2_t33_650M_UR50D()

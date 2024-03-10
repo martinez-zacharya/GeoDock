@@ -13,7 +13,8 @@ def refine(pdb_file, stiffness=10., tolerance=2.39, use_gpu=False):
     fixer.findMissingAtoms()
     fixer.addMissingAtoms()
 
-    force_field = openmm.app.ForceField("amber14/protein.ff14SB.xml")
+    # force_field = openmm.app.ForceField("amber14/protein.ff14SB.xml")
+    force_field = openmm.app.ForceField("amber14-all.xml", "amber14/tip3pfb.xml")
     modeller = openmm.app.Modeller(fixer.topology, fixer.positions)
     modeller.addHydrogens(force_field)
     system = force_field.createSystem(modeller.topology)
@@ -34,7 +35,7 @@ def refine(pdb_file, stiffness=10., tolerance=2.39, use_gpu=False):
 
     simulation = openmm.app.Simulation(modeller.topology, system, integrator, platform)
     simulation.context.setPositions(modeller.positions)
-    simulation.minimizeEnergy(tolerance)
+    simulation.minimizeEnergy(maxIterations=0)
 
     with open(pdb_file, "w") as f:
         openmm.app.PDBFile.writeFile(

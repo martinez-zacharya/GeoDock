@@ -35,7 +35,14 @@ def embed(
         pair_embeddings=pair_embeddings.unsqueeze(0),
         positional_embeddings=positional_embeddings.unsqueeze(0),
     )
-
+    # print(f'{protein1_embeddings.unsqueeze(0)=}')
+    # print(f'{protein1_embeddings.unsqueeze(0).shape=}')
+    # print(f'{protein2_embeddings.unsqueeze(0)=}')
+    # print(f'{protein2_embeddings.unsqueeze(0).shape=}')
+    # print(f'{pair_embeddings.unsqueeze(0)=}')
+    # print(f'{pair_embeddings.unsqueeze(0).shape=}')
+    # print(f'{positional_embeddings.unsqueeze(0)=}')
+    # print(f'{positional_embeddings.unsqueeze(0).shape=}')
     return embeddings
     
 def get_esm_rep(seq_prim, model, batch_converter, device):
