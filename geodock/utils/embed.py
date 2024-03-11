@@ -21,6 +21,8 @@ def embed(
     protein2_embeddings = get_esm_rep(seq2, model, batch_converter, device)
 
     # Get pair embeddings
+    # print(type(coords1))
+    # print(coords1.shape)
     coords = torch.cat([coords1, coords2], dim=0)
     input_pairs = get_pair_mats(coords, len(seq1))
     input_contact = torch.zeros(*input_pairs.shape[:-1])[..., None] 
@@ -35,8 +37,8 @@ def embed(
         pair_embeddings=pair_embeddings.unsqueeze(0),
         positional_embeddings=positional_embeddings.unsqueeze(0),
     )
-    # print(f'{protein1_embeddings.unsqueeze(0)=}')
-    # print(f'{protein1_embeddings.unsqueeze(0).shape=}')
+    print(f'{protein1_embeddings.unsqueeze(0)=}')
+    print(f'{protein1_embeddings.unsqueeze(0).shape=}')
     # print(f'{protein2_embeddings.unsqueeze(0)=}')
     # print(f'{protein2_embeddings.unsqueeze(0).shape=}')
     # print(f'{pair_embeddings.unsqueeze(0)=}')
