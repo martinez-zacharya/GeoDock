@@ -2,7 +2,7 @@ import os
 import torch
 import pandas as pd
 from torch.utils import data
-from esm.inverse_folding.util import load_coords
+from trill.utils.inverse_folding.util import load_coords
 
 
 class AFDataset(data.Dataset):
