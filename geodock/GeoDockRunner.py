@@ -5,7 +5,7 @@ from geodock.utils.embed import embed
 from geodock.utils.docking import dock
 from geodock.model.interface import GeoDockInput
 from geodock.model.GeoDock import GeoDock
-from esm.inverse_folding.util import load_coords
+from trill.utils.inverse_folding.util import load_coords
 from trill.utils.lightning_models import ESM
 from geodock.utils.embed import get_pair_mats, get_pair_relpos
 
