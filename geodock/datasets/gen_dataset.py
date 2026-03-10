@@ -10,7 +10,7 @@ import torch.nn.functional as F
 from tqdm import tqdm
 from torch.utils import data
 from einops import rearrange, repeat
-from esm.inverse_folding.util import load_coords
+from trill.utils.inverse_folding.util import load_coords
 from src.utils.pdb import save_PDB, place_fourth_atom 
 from torch_geometric.data import HeteroData
 
