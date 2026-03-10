@@ -1,7 +1,7 @@
 import os
 import torch
 from torch.utils import data
-from esm.inverse_folding.util import load_coords
+from trill.utils.inverse_folding.util import load_coords
 
 
 class BoundDataset(data.Dataset):
