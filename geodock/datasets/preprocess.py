@@ -4,7 +4,7 @@ import os.path as path
 import pandas as pd
 from tqdm import tqdm
 from torch_geometric.data import HeteroData
-from esm.inverse_folding.util import load_coords
+from trill.utils.inverse_folding.util import load_coords
 
 
 def get_esm_rep(seq_prim, batch_converter, esm_model, device):
